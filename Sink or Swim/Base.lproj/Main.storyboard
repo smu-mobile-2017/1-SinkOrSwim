@@ -256,6 +256,70 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Stepper and Switch" id="NrS-im-HED">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8wp-Mq-PK9">
+                                        <rect key="frame" x="0.0" y="243.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wp-Mq-PK9" id="9Mg-KL-eHm">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-aS-U4o">
+                                                    <rect key="frame" x="14" y="7" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="didChangeStepperValue:" destination="dwR-s4-vp7" eventType="valueChanged" id="ofx-uX-fpS"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📶 Start stepping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMl-T5-dUB">
+                                                    <rect key="frame" x="116" y="0.0" width="196" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aMl-T5-dUB" secondAttribute="bottom" id="C89-BG-zgZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="aMl-T5-dUB" secondAttribute="trailing" constant="8" id="JJY-a5-L2v"/>
+                                                <constraint firstItem="aMl-T5-dUB" firstAttribute="top" secondItem="9Mg-KL-eHm" secondAttribute="top" id="XRk-fC-IhV"/>
+                                                <constraint firstItem="aMl-T5-dUB" firstAttribute="leading" secondItem="eSg-aS-U4o" secondAttribute="trailing" constant="8" id="dh0-ml-1aC"/>
+                                                <constraint firstItem="eSg-aS-U4o" firstAttribute="leading" secondItem="9Mg-KL-eHm" secondAttribute="leading" constant="14" id="gjh-zn-4NA"/>
+                                                <constraint firstItem="eSg-aS-U4o" firstAttribute="centerY" secondItem="9Mg-KL-eHm" secondAttribute="centerY" id="mlp-Gi-hlm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uMu-RY-mPh">
+                                        <rect key="frame" x="0.0" y="287.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMu-RY-mPh" id="prP-wE-bw3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-E0-7dd">
+                                                    <rect key="frame" x="14" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="didChangeSwitchValue:" destination="dwR-s4-vp7" eventType="valueChanged" id="Jb2-Gy-7VD"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lights on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-i8-m21">
+                                                    <rect key="frame" x="71" y="0.0" width="241" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VuJ-i8-m21" firstAttribute="leading" secondItem="xGA-E0-7dd" secondAttribute="trailing" constant="8" id="Fbo-2r-VMx"/>
+                                                <constraint firstAttribute="trailing" secondItem="VuJ-i8-m21" secondAttribute="trailing" constant="8" id="RqY-q0-KHO"/>
+                                                <constraint firstItem="xGA-E0-7dd" firstAttribute="leading" secondItem="prP-wE-bw3" secondAttribute="leading" constant="14" id="gXY-SI-1Fm"/>
+                                                <constraint firstItem="VuJ-i8-m21" firstAttribute="top" secondItem="prP-wE-bw3" secondAttribute="top" id="jNt-cN-8Nq"/>
+                                                <constraint firstAttribute="bottom" secondItem="VuJ-i8-m21" secondAttribute="bottom" id="jcA-Pq-Ga4"/>
+                                                <constraint firstItem="xGA-E0-7dd" firstAttribute="centerY" secondItem="prP-wE-bw3" secondAttribute="centerY" id="m79-ub-Gk4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="dwR-s4-vp7" id="TzV-Lr-rs1"/>
@@ -265,6 +329,9 @@
                     <navigationItem key="navigationItem" id="Dzj-26-kZh"/>
                     <connections>
                         <outlet property="sliderOutputLabel" destination="A1k-1B-e4S" id="MQm-T9-oRo"/>
+                        <outlet property="stepperOutputLabel" destination="aMl-T5-dUB" id="j0B-wR-Bvu"/>
+                        <outlet property="switchContentView" destination="prP-wE-bw3" id="Vh1-vt-1Rp"/>
+                        <outlet property="switchOutputLabel" destination="VuJ-i8-m21" id="KVk-1C-626"/>
                     </connections>
                 </tableViewController>
             </objects>

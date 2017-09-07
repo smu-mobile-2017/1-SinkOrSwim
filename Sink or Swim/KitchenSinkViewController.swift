@@ -11,6 +11,10 @@ import UIKit
 class KitchenSinkViewController: UITableViewController {
 
 	@IBOutlet weak var sliderOutputLabel: UILabel!
+	@IBOutlet weak var stepperOutputLabel: UILabel!
+	
+	@IBOutlet weak var switchContentView: UIView!
+	@IBOutlet weak var switchOutputLabel: UILabel!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +46,28 @@ class KitchenSinkViewController: UITableViewController {
 		default:
 			condition = "☀️ Sunny"
 		}
-		sliderOutputLabel.text = "\(condition) (\(ceil(value))%)"
+		sliderOutputLabel.text = "\(condition) (\(Int(ceil(value)))%)"
 	}
+	
+	@IBAction func didChangeStepperValue(_ sender: UIStepper) {
+		let value = Int(sender.value)
+		stepperOutputLabel.text = "📶 Stepping to \(value)"
+	}
+	
+	@IBAction func didChangeSwitchValue(_ sender: UISwitch) {
+		let isOn = sender.isOn
+		if isOn {
+			switchOutputLabel.text = "Lights on"
+			switchOutputLabel.textColor = .black
+			switchContentView.backgroundColor = .clear
+		} else {
+			switchOutputLabel.text = "Lights off"
+			switchOutputLabel.textColor = .white
+			switchContentView.backgroundColor = .black
+		}
+	}
+	
+	
     /*
     // MARK: - Navigation
 
