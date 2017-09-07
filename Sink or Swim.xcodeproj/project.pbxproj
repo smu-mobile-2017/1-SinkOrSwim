@@ -14,6 +14,7 @@
 		27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */; };
 		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
 		27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */; };
+		27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A51F61254C004BED17 /* ScrollViewController.swift */; };
 		27D1659C1F5EF44800A57CF0 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */; };
 		27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */; };
 		27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */; };
@@ -32,6 +33,7 @@
 		27051AA51F5EF25A0072EBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewController.swift; sourceTree = "<group>"; };
+		27B371A51F61254C004BED17 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPI.swift; sourceTree = "<group>"; };
 		27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				27051A991F5EF25A0072EBF6 /* AppDelegate.swift */,
 				27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */,
 				27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */,
+				27B371A51F61254C004BED17 /* ScrollViewController.swift */,
 				27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */,
 				27051A9D1F5EF25A0072EBF6 /* Main.storyboard */,
 				27051AA01F5EF25A0072EBF6 /* Assets.xcassets */,
@@ -254,6 +257,7 @@
 				27D165AB1F5F06B500A57CF0 /* RedditThing.swift in Sources */,
 				27D165AD1F5F06D600A57CF0 /* RedditName.swift in Sources */,
 				27D165A91F5F062300A57CF0 /* RedditLink.swift in Sources */,
+				27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */,
 				27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
 				27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */,

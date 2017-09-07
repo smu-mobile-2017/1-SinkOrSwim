@@ -37,20 +37,30 @@ class RedditAPI {
 	
 	static func hotPosts(inSubreddit subreddit: String?, limit: UInt)
 	throws -> Promise<[RedditLink]> {
-		let q = DispatchQueue.global()
-		
-		var url: URL = rootURL
-		if let s = subreddit {
-			url = url.appendingPathComponent("r/\(s)")
-		}
-		url = url.appendingPathComponent("hot.json")
-		
-		let parameters: Parameters = ["limit": limit]
-		
-		return baseRequest(to: url, withMethod: .get, passingParameters: parameters)
-		.then(on: q) { json in
-			try convertJSONToLinks(json)
-		}
+		return try getPosts(underFile: "hot.json", inSubreddit: subreddit, limit: limit)
+	}
+	
+	static func newPosts(inSubreddit subreddit: String?, limit: UInt)
+	throws -> Promise<[RedditLink]> {
+		return try getPosts(underFile: "new.json", inSubreddit: subreddit, limit: limit)
+	}
+	
+	static func getPosts(underFile file: String, inSubreddit subreddit: String?, limit: UInt)
+		throws -> Promise<[RedditLink]> {
+			let q = DispatchQueue.global()
+			
+			var url: URL = rootURL
+			if let s = subreddit {
+				url = url.appendingPathComponent("r/\(s)")
+			}
+			url = url.appendingPathComponent(file)
+			
+			let parameters: Parameters = ["limit": limit]
+			
+			return baseRequest(to: url, withMethod: .get, passingParameters: parameters)
+				.then(on: q) { json in
+					try convertJSONToLinks(json)
+			}
 	}
 	
 	static func convertJSONToLinks(_ json: [String: Any])

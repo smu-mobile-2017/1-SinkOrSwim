@@ -9,13 +9,22 @@
 import UIKit
 import PromiseKit
 
+enum ListingType {
+	case hot, new
+}
+
 class PostListViewController: UITableViewController {
 	
 	var posts: [RedditLink] = []
 	
-	func loadPosts() {
-		firstly {
-			try RedditAPI.hotPosts(inSubreddit: nil, limit: 15)
+	func loadPosts(_ type: ListingType) {
+		firstly { () -> Promise<[RedditLink]> in
+			switch type {
+			case .hot:
+				return try RedditAPI.hotPosts(inSubreddit: nil, limit: 15)
+			case .new:
+				return try RedditAPI.newPosts(inSubreddit: nil, limit: 15)
+			}
 		}.then { result -> Void in
 			self.posts = result
 			self.tableView.reloadData()
@@ -37,13 +46,25 @@ class PostListViewController: UITableViewController {
         super.viewDidLoad()
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 140
-		loadPosts()
+		loadPosts(.hot)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	@IBAction func didChangeSegmentedControlValue(_ sender: UISegmentedControl) {
+		let title = sender.titleForSegment(at: sender.selectedSegmentIndex)
+		if title == "Hot" {
+			loadPosts(.hot)
+		} else if title == "New" {
+			loadPosts(.new)
+		} else {
+			print("Unknown Segmented Control Selection")
+		}
+	}
+	
 
     // MARK: - Table view data source
 
@@ -64,6 +85,9 @@ class PostListViewController: UITableViewController {
 		lc.titleLabel.text = post.title
 		lc.upperDetailLabel.text = "r/\(post.subreddit) · \(post.author)"
 		lc.lowerDetailLabel.text = "⬆️ \(post.score) ⬇️"
+		
+		// reset image due to reuse
+		lc.cellImageView.image = nil
 		
 		if let url = post.thumbnailURL {
 			loadThumbnail(forCell: cell, withURL: url)
@@ -86,6 +110,7 @@ class PostListViewController: UITableViewController {
 			lc.cellImageView.image = image
 		}.catch { error in
 			print(error)
+			print("Offending URL: \(url.absoluteString)")
 		}
 	}
 

@@ -50,7 +50,9 @@ struct RedditLink: RedditThing {
 		
 		self.selfTextHTML = o["selftext_html"] as? String
 		if let _thumbnailURLString = o["thumbnail"] as? String,
-			_thumbnailURLString != "default" {
+			_thumbnailURLString != "default",
+			_thumbnailURLString != "self"
+		{
 			self.thumbnailURL = URL(string: _thumbnailURLString)
 		} else {
 			self.thumbnailURL = nil

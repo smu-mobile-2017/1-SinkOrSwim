@@ -16,9 +16,14 @@ class KitchenSinkViewController: UITableViewController {
 	@IBOutlet weak var switchContentView: UIView!
 	@IBOutlet weak var switchOutputLabel: UILabel!
 	
+	@IBOutlet weak var pickerOutputLabel: UILabel!
+	
+	
+	let pickerOptions = ["🍎Apples","🍌Bananas","🍒Cherries"]
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		self.navigationController?.navigationBar.tintColor = .white
         // Do any additional setup after loading the view.
     }
 
@@ -67,7 +72,6 @@ class KitchenSinkViewController: UITableViewController {
 		}
 	}
 	
-	
     /*
     // MARK: - Navigation
 
@@ -77,5 +81,25 @@ class KitchenSinkViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension KitchenSinkViewController: UIPickerViewDelegate {
+	
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return pickerOptions[row]
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		pickerOutputLabel.text = pickerOptions[row]
+	}
+}
+
+extension KitchenSinkViewController: UIPickerViewDataSource {
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return pickerOptions.count
+	}
 }
