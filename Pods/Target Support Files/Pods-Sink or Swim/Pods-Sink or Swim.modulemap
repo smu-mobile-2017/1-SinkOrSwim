@@ -1,0 +1,6 @@
+framework module Pods_Sink_or_Swim {
+  umbrella header "Pods-Sink or Swim-umbrella.h"
+
+  export *
+  module * { export * }
+}

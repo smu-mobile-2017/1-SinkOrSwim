@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E28CCBE10B770FDC7442BED /* Pods_Sink_or_Swim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B079545E6B8C148C6EFF8BE9 /* Pods_Sink_or_Swim.framework */; };
 		27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27051A991F5EF25A0072EBF6 /* AppDelegate.swift */; };
-		27051A9C1F5EF25A0072EBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27051A9B1F5EF25A0072EBF6 /* ViewController.swift */; };
 		27051A9F1F5EF25A0072EBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051A9D1F5EF25A0072EBF6 /* Main.storyboard */; };
 		27051AA11F5EF25A0072EBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA01F5EF25A0072EBF6 /* Assets.xcassets */; };
 		27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */; };
+		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
+		27D1659C1F5EF44800A57CF0 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */; };
+		27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */; };
+		27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */; };
+		27D165A91F5F062300A57CF0 /* RedditLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D165A81F5F062300A57CF0 /* RedditLink.swift */; };
+		27D165AB1F5F06B500A57CF0 /* RedditThing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D165AA1F5F06B500A57CF0 /* RedditThing.swift */; };
+		27D165AD1F5F06D600A57CF0 /* RedditName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D165AC1F5F06D600A57CF0 /* RedditName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		216F81F46E3C0768412FCD69 /* Pods-Sink or Swim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sink or Swim.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim.release.xcconfig"; sourceTree = "<group>"; };
 		27051A961F5EF25A0072EBF6 /* Sink or Swim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sink or Swim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27051A991F5EF25A0072EBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27051A9B1F5EF25A0072EBF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27051A9E1F5EF25A0072EBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27051AA01F5EF25A0072EBF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27051AA31F5EF25A0072EBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27051AA51F5EF25A0072EBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPI.swift; sourceTree = "<group>"; };
+		27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
+		27D165A81F5F062300A57CF0 /* RedditLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditLink.swift; sourceTree = "<group>"; };
+		27D165AA1F5F06B500A57CF0 /* RedditThing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditThing.swift; sourceTree = "<group>"; };
+		27D165AC1F5F06D600A57CF0 /* RedditName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditName.swift; sourceTree = "<group>"; };
+		6B08648F34B79F48DA1235FF /* Pods-Sink or Swim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sink or Swim.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim.debug.xcconfig"; sourceTree = "<group>"; };
+		B079545E6B8C148C6EFF8BE9 /* Pods_Sink_or_Swim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sink_or_Swim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E28CCBE10B770FDC7442BED /* Pods_Sink_or_Swim.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +55,11 @@
 		27051A8D1F5EF25A0072EBF6 = {
 			isa = PBXGroup;
 			children = (
+				27051AAB1F5EF2650072EBF6 /* Podfile */,
 				27051A981F5EF25A0072EBF6 /* Sink or Swim */,
 				27051A971F5EF25A0072EBF6 /* Products */,
+				5C99637EB1624E48E9B78492 /* Pods */,
+				90F892BA78031DCCF4E3120F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +74,44 @@
 		27051A981F5EF25A0072EBF6 /* Sink or Swim */ = {
 			isa = PBXGroup;
 			children = (
+				27D165A51F5F054400A57CF0 /* Reddit */,
 				27051A991F5EF25A0072EBF6 /* AppDelegate.swift */,
-				27051A9B1F5EF25A0072EBF6 /* ViewController.swift */,
+				27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */,
+				27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */,
 				27051A9D1F5EF25A0072EBF6 /* Main.storyboard */,
 				27051AA01F5EF25A0072EBF6 /* Assets.xcassets */,
 				27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */,
 				27051AA51F5EF25A0072EBF6 /* Info.plist */,
 			);
 			path = "Sink or Swim";
+			sourceTree = "<group>";
+		};
+		27D165A51F5F054400A57CF0 /* Reddit */ = {
+			isa = PBXGroup;
+			children = (
+				27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */,
+				27D165A81F5F062300A57CF0 /* RedditLink.swift */,
+				27D165AA1F5F06B500A57CF0 /* RedditThing.swift */,
+				27D165AC1F5F06D600A57CF0 /* RedditName.swift */,
+			);
+			name = Reddit;
+			sourceTree = "<group>";
+		};
+		5C99637EB1624E48E9B78492 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B08648F34B79F48DA1235FF /* Pods-Sink or Swim.debug.xcconfig */,
+				216F81F46E3C0768412FCD69 /* Pods-Sink or Swim.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90F892BA78031DCCF4E3120F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B079545E6B8C148C6EFF8BE9 /* Pods_Sink_or_Swim.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27051AA81F5EF25B0072EBF6 /* Build configuration list for PBXNativeTarget "Sink or Swim" */;
 			buildPhases = (
+				80C9F466E143529004637DA5 /* [CP] Check Pods Manifest.lock */,
 				27051A921F5EF25A0072EBF6 /* Sources */,
 				27051A931F5EF25A0072EBF6 /* Frameworks */,
 				27051A941F5EF25A0072EBF6 /* Resources */,
+				2D63B0F2660C1A3E9AEAB8C2 /* [CP] Embed Pods Frameworks */,
+				AF4344AC8C5F60D3DBEC1160 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,19 +179,81 @@
 			files = (
 				27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */,
 				27051AA11F5EF25A0072EBF6 /* Assets.xcassets in Resources */,
+				27051AAC1F5EF2650072EBF6 /* Podfile in Resources */,
 				27051A9F1F5EF25A0072EBF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D63B0F2660C1A3E9AEAB8C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80C9F466E143529004637DA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sink or Swim-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF4344AC8C5F60D3DBEC1160 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27051A921F5EF25A0072EBF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27051A9C1F5EF25A0072EBF6 /* ViewController.swift in Sources */,
+				27D1659C1F5EF44800A57CF0 /* PostListViewController.swift in Sources */,
+				27D165AB1F5F06B500A57CF0 /* RedditThing.swift in Sources */,
+				27D165AD1F5F06D600A57CF0 /* RedditName.swift in Sources */,
+				27D165A91F5F062300A57CF0 /* RedditLink.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
+				27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */,
+				27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +374,7 @@
 		};
 		27051AA91F5EF25B0072EBF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B08648F34B79F48DA1235FF /* Pods-Sink or Swim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M8MME6Q9DA;
@@ -272,6 +388,7 @@
 		};
 		27051AAA1F5EF25B0072EBF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 216F81F46E3C0768412FCD69 /* Pods-Sink or Swim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M8MME6Q9DA;
@@ -302,6 +419,7 @@
 				27051AAA1F5EF25B0072EBF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27051A951F5EF25A0072EBF6"
-               BuildableName = "Sink or Swim.app"
-               BlueprintName = "Sink or Swim"
-               ReferencedContainer = "container:Sink or Swim.xcodeproj">
+               BlueprintIdentifier = "6F96AD5CC02D2BFC2F105DA3D539C833"
+               BuildableName = "Pods_Sink_or_Swim.framework"
+               BlueprintName = "Pods-Sink or Swim"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27051A951F5EF25A0072EBF6"
-            BuildableName = "Sink or Swim.app"
-            BlueprintName = "Sink or Swim"
-            ReferencedContainer = "container:Sink or Swim.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27051A951F5EF25A0072EBF6"
-            BuildableName = "Sink or Swim.app"
-            BlueprintName = "Sink or Swim"
-            ReferencedContainer = "container:Sink or Swim.xcodeproj">
+            BlueprintIdentifier = "6F96AD5CC02D2BFC2F105DA3D539C833"
+            BuildableName = "Pods_Sink_or_Swim.framework"
+            BlueprintName = "Pods-Sink or Swim"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27051A951F5EF25A0072EBF6"
-            BuildableName = "Sink or Swim.app"
-            BlueprintName = "Sink or Swim"
-            ReferencedContainer = "container:Sink or Swim.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
