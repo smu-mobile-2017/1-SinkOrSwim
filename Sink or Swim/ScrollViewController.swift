@@ -9,15 +9,9 @@
 import UIKit
 
 class ScrollViewController: UIViewController {
-
-	// [CITE] https://www.raywenderlich.com/159481/uiscrollview-tutorial-getting-started
 	
+	@IBOutlet weak var imageContainerView: UIView!
 	@IBOutlet weak var scrollView: UIScrollView!
-	@IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
-	@IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
-	@IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
-	@IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
-	@IBOutlet weak var imageView: UIImageView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +23,6 @@ class ScrollViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	fileprivate func updateMinZoomScale(forSize size: CGSize) {
-		let widthScale = size.width / imageView.bounds.width
-		let heightScale = size.height / imageView.bounds.height
-		let minScale = min(widthScale, heightScale)
-		
-		scrollView.minimumZoomScale = minScale
-		scrollView.zoomScale = minScale
-	}
 	
 
     /*
@@ -54,7 +39,7 @@ class ScrollViewController: UIViewController {
 
 extension ScrollViewController: UIScrollViewDelegate {
 	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-		return imageView
+		return imageContainerView
 	}
 	
 }
