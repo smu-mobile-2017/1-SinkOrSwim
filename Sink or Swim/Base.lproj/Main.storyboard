@@ -199,6 +199,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TEL-Kg-Umo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yRa-qX-Kgu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
@@ -236,7 +237,6 @@
         <!--Kitchen Sink View Controller-->
         <scene sceneID="Ix0-vz-ozu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aZk-PC-dlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="dwR-s4-vp7" customClass="KitchenSinkViewController" customModule="Sink_or_Swim" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7Pc-1t-A3o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
@@ -459,6 +459,7 @@
                         <outlet property="switchOutputLabel" destination="VuJ-i8-m21" id="KVk-1C-626"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZk-PC-dlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2017.5" y="1083.8028169014085"/>
         </scene>
@@ -474,8 +475,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-W0-PDA">
-                                <rect key="frame" x="0.0" y="64" width="320" height="936"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-W0-PDA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klt-ab-RTK">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -487,7 +488,6 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="fgN-aM-NML" firstAttribute="centerY" secondItem="Klt-ab-RTK" secondAttribute="centerY" id="9E9-L9-QbO"/>
                                             <constraint firstItem="fgN-aM-NML" firstAttribute="centerX" secondItem="Klt-ab-RTK" secondAttribute="centerX" id="GNJ-UI-ayT"/>
@@ -500,9 +500,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Klt-ab-RTK" firstAttribute="centerX" secondItem="H3y-W0-PDA" secondAttribute="centerX" id="crN-Dd-1wK"/>
-                                    <constraint firstItem="Klt-ab-RTK" firstAttribute="top" secondItem="H3y-W0-PDA" secondAttribute="top" id="hQm-nU-6H0"/>
+                                    <constraint firstItem="Klt-ab-RTK" firstAttribute="top" secondItem="H3y-W0-PDA" secondAttribute="top" id="h7c-T1-aPp"/>
                                     <constraint firstAttribute="trailing" secondItem="Klt-ab-RTK" secondAttribute="trailing" id="rO4-Kq-klc"/>
-                                    <constraint firstAttribute="bottom" secondItem="Klt-ab-RTK" secondAttribute="bottom" constant="432" id="vaP-hd-isx"/>
                                     <constraint firstItem="Klt-ab-RTK" firstAttribute="leading" secondItem="H3y-W0-PDA" secondAttribute="leading" id="yYa-US-muq"/>
                                 </constraints>
                                 <connections>
@@ -512,7 +511,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H3y-W0-PDA" firstAttribute="top" secondItem="z7I-tL-XLq" secondAttribute="bottom" id="9db-v1-MLY"/>
+                            <constraint firstItem="H3y-W0-PDA" firstAttribute="top" secondItem="8yD-2e-XGd" secondAttribute="top" id="CwY-Nw-9el"/>
                             <constraint firstAttribute="trailing" secondItem="H3y-W0-PDA" secondAttribute="trailing" id="PoN-E8-XxN"/>
                             <constraint firstAttribute="bottom" secondItem="H3y-W0-PDA" secondAttribute="bottom" id="fLb-V4-EMi"/>
                             <constraint firstItem="H3y-W0-PDA" firstAttribute="leading" secondItem="8yD-2e-XGd" secondAttribute="leading" id="g0l-ek-TaS"/>
