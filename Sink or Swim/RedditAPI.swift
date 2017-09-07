@@ -8,7 +8,7 @@
 
 import Foundation
 import PromiseKit
-import Alamofire
+import Just
 
 enum RedditAPIError: Error {
 	case offline
@@ -16,21 +16,33 @@ enum RedditAPIError: Error {
 	case unexpectedResponseStructure
 	case deserializationFailed
 	case imageLoadFailed
+	case httpLibraryError
 }
 
 class RedditAPI {
+	
 	typealias JSONDictionary = [String: Any]
 	static let rootURL: URL = URL(string: "https://reddit.com")!
+	var imageCache: NSCache<NSURL,UIImage> = NSCache()
 	
-	private static func baseRequest(
-		to url: URL,
-		withMethod method: HTTPMethod,
-		passingParameters parameters: Parameters
-	) -> Promise<JSONDictionary> {
+	private static func baseRequest(to url: URL, withParameters parameters: [String: Any]) -> Promise<JSONDictionary> {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		
-		return Alamofire.request(url, parameters: parameters).responseJsonDictionary()
-		.always {
+		return Promise<Data> { fulfill, reject in
+			Just.get(url, params: parameters) { response in
+				if response.ok, let data = response.content {
+					fulfill(data)
+				} else {
+					reject(RedditAPIError.httpLibraryError)
+				}
+			}
+		}.then { data -> JSONDictionary in
+			guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
+			let jsonDict = json as? JSONDictionary else {
+				throw RedditAPIError.dataCastToJSONFailed
+			}
+			return jsonDict
+		}.always {
 			UIApplication.shared.isNetworkActivityIndicatorVisible = false
 		}
 	}
@@ -55,9 +67,7 @@ class RedditAPI {
 			}
 			url = url.appendingPathComponent(file)
 			
-			let parameters: Parameters = ["limit": limit]
-			
-			return baseRequest(to: url, withMethod: .get, passingParameters: parameters)
+			return baseRequest(to: url, withParameters: ["limit": limit])
 				.then(on: q) { json in
 					try convertJSONToLinks(json)
 			}
@@ -85,10 +95,36 @@ class RedditAPI {
 	}
 	
 	static func loadImage(_ url: URL) -> Promise<UIImage> {
-		let q = DispatchQueue.global()
-		return Alamofire.request(url).validate(contentType: ["image/*"])
-		.responseData().then(on: q) { data in
-			return UIImage(data: data)!
+//		return Promise { fulfill, reject in
+//			let urlString = NSString(string: url.absoluteString)
+//			self.imageCache
+//		}
+//		return Alamofire.request(url.absoluteString)
+//		.validate(contentType: ["image/*"])
+//		.response(completionHandler: { response in
+//			return UIImage(data: response)!
+//		})
+		
+		return Promise { fulfill, reject in
+			let task = URLSession.shared.dataTask(with: url) { data, response, error in
+				if let image = UIImage(data: data!) {
+					fulfill(image)
+				} else {
+					reject(RedditAPIError.imageLoadFailed)
+				}
+			}
+			task.resume()
+		}
+	}
+	
+	static func getAdvertisementMessage() -> Promise<String> {
+		// mock advertisement server
+		return after(seconds: 1).then {
+			return Promise { fulfill, reject in
+				let ads = ["Ad A","Ad B","Ad C"]
+				let randomChoice = Int(arc4random_uniform(UInt32(ads.count)))
+				fulfill(ads[randomChoice])
+			}
 		}
 	}
 	

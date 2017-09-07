@@ -16,6 +16,8 @@ enum ListingType {
 class PostListViewController: UITableViewController {
 	
 	var posts: [RedditLink] = []
+	var advertisement: AdvertisementCell? = nil
+	let api: RedditAPI = RedditAPI()
 	
 	func loadPosts(_ type: ListingType) {
 		firstly { () -> Promise<[RedditLink]> in
@@ -69,14 +71,25 @@ class PostListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+		// 0 - advertisement
+		// 1 - posts
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+		if section == 0 {
+			return 1
+		} else {
+			return posts.count
+		}
     }
 	
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		if indexPath.section == 0 {
+			return generateAdvertisement(for: indexPath)
+		}
+		
+		// create link cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "linkCell", for: indexPath)
 		let lc = cell as! LinkCell
 		let row = indexPath.row
@@ -101,6 +114,21 @@ class PostListViewController: UITableViewController {
 		}
         return cell
     }
+	
+	func generateAdvertisement(for indexPath: IndexPath) -> UITableViewCell {
+		if let ad = self.advertisement {
+			return ad
+		}
+		let cell = tableView.dequeueReusableCell(withIdentifier: "advertisementCell", for: indexPath)
+		let ad = cell as! AdvertisementCell
+		RedditAPI.getAdvertisementMessage().then { msg in
+			ad.updateLoadedState(message: msg)
+		}.catch { error in
+			print("[generateAdvertisement] Error: \(error)")
+		}
+		self.advertisement = ad
+		return cell
+	}
 	
 	func loadThumbnail(forCell cell: UITableViewCell, withURL url: URL) {
 		let q = DispatchQueue.main

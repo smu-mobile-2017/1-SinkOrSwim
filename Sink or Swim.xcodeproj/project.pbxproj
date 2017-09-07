@@ -15,6 +15,7 @@
 		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
 		27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */; };
 		27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A51F61254C004BED17 /* ScrollViewController.swift */; };
+		27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A71F619793004BED17 /* AdvertisementCell.swift */; };
 		27D1659C1F5EF44800A57CF0 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */; };
 		27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */; };
 		27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */; };
@@ -34,6 +35,7 @@
 		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewController.swift; sourceTree = "<group>"; };
 		27B371A51F61254C004BED17 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		27B371A71F619793004BED17 /* AdvertisementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
 		27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		27D1659D1F5EF56F00A57CF0 /* RedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPI.swift; sourceTree = "<group>"; };
 		27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
@@ -78,18 +80,35 @@
 		27051A981F5EF25A0072EBF6 /* Sink or Swim */ = {
 			isa = PBXGroup;
 			children = (
-				27D165A51F5F054400A57CF0 /* Reddit */,
 				27051A991F5EF25A0072EBF6 /* AppDelegate.swift */,
+				27B371AA1F619881004BED17 /* Storyboards */,
+				27B371A91F619878004BED17 /* Cells */,
+				27D165A51F5F054400A57CF0 /* Reddit */,
 				27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */,
 				27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */,
 				27B371A51F61254C004BED17 /* ScrollViewController.swift */,
-				27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */,
-				27051A9D1F5EF25A0072EBF6 /* Main.storyboard */,
 				27051AA01F5EF25A0072EBF6 /* Assets.xcassets */,
-				27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */,
 				27051AA51F5EF25A0072EBF6 /* Info.plist */,
 			);
 			path = "Sink or Swim";
+			sourceTree = "<group>";
+		};
+		27B371A91F619878004BED17 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */,
+				27B371A71F619793004BED17 /* AdvertisementCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		27B371AA1F619881004BED17 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				27051A9D1F5EF25A0072EBF6 /* Main.storyboard */,
+				27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		27D165A51F5F054400A57CF0 /* Reddit */ = {
@@ -200,12 +219,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sink or Swim/Pods-Sink or Swim-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Just/Just.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Just.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +279,7 @@
 				27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */,
 				27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
+				27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */,
 				27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */,
 				27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */,
 			);
