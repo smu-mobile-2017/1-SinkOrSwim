@@ -74,7 +74,7 @@ class PostListViewController: UITableViewController {
 		// We load hot posts by default.
 		loadPosts(.hot)
     }
-
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
