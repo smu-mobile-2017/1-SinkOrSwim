@@ -125,6 +125,9 @@ class PostListViewController: UITableViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let post = posts[selectedRow!]
 		segue.destination.title = post.title
+		let webBrowser = segue.destination as! PostWebBrowserViewController
+		let req = URLRequest(url: post.url)
+		webBrowser.request = req
 	}
 	
 	func generateAdvertisement(for indexPath: IndexPath) -> UITableViewCell {

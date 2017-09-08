@@ -26,13 +26,10 @@ class AdvertisementCell: UITableViewCell {
 	
 	func updateLoadedState(message: String?) {
 		DispatchQueue.main.async {
-			print("Update state \(message ?? "nil")")
 			if let message = message {
-				print("messageful state")
 				self.advertisementMessage.text = message
 				self.activityIndicator.stopAnimating()
 			} else {
-				print("messageless state")
 				self.advertisementMessage.text = ""
 				self.activityIndicator.startAnimating()
 			}

@@ -13,6 +13,7 @@
 		27051AA11F5EF25A0072EBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA01F5EF25A0072EBF6 /* Assets.xcassets */; };
 		27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */; };
 		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
+		279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */; };
 		27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */; };
 		27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A51F61254C004BED17 /* ScrollViewController.swift */; };
 		27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A71F619793004BED17 /* AdvertisementCell.swift */; };
@@ -33,6 +34,7 @@
 		27051AA31F5EF25A0072EBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27051AA51F5EF25A0072EBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWebBrowserViewController.swift; sourceTree = "<group>"; };
 		27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewController.swift; sourceTree = "<group>"; };
 		27B371A51F61254C004BED17 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		27B371A71F619793004BED17 /* AdvertisementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */,
 				27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */,
 				27B371A51F61254C004BED17 /* ScrollViewController.swift */,
+				279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
 				27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */,
+				279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */,
 				27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */,
 				27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */,
 			);
