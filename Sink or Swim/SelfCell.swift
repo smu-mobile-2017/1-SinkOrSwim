@@ -1,20 +1,18 @@
 //
-//  LinkCell.swift
+//  SelfCell.swift
 //  Sink or Swim
 //
-//  Created by Paul Herz on 9/5/17.
+//  Created by Paul Herz on 9/8/17.
 //  Copyright © 2017 Paul Herz. All rights reserved.
 //
 
 import UIKit
 
-class LinkCell: UITableViewCell, GenericListingCell {
-	
-	@IBOutlet weak var cellImageView: UIImageView!
+class SelfCell: UITableViewCell, GenericListingCell {
+
 	@IBOutlet weak var upperDetailLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var lowerDetailLabel: UILabel!
-	
 	
     override func awakeFromNib() {
         super.awakeFromNib()

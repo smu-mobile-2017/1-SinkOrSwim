@@ -14,6 +14,9 @@
 		27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */; };
 		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
 		2720391B1F6306720034E1CD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720391A1F6306720034E1CD /* CollectionViewController.swift */; };
+		2720391D1F630D590034E1CD /* SelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720391C1F630D590034E1CD /* SelfCell.swift */; };
+		2720391F1F630DDF0034E1CD /* GenericListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720391E1F630DDF0034E1CD /* GenericListingCell.swift */; };
+		272039211F6316760034E1CD /* PostSelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272039201F6316760034E1CD /* PostSelfViewController.swift */; };
 		279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */; };
 		279153D71F622E2F00E1A7C0 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */; };
 		279153DA1F622EC300E1A7C0 /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D91F622EC300E1A7C0 /* CustomModalView.swift */; };
@@ -38,6 +41,9 @@
 		27051AA51F5EF25A0072EBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2720391A1F6306720034E1CD /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		2720391C1F630D590034E1CD /* SelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfCell.swift; sourceTree = "<group>"; };
+		2720391E1F630DDF0034E1CD /* GenericListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericListingCell.swift; sourceTree = "<group>"; };
+		272039201F6316760034E1CD /* PostSelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSelfViewController.swift; sourceTree = "<group>"; };
 		279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWebBrowserViewController.swift; sourceTree = "<group>"; };
 		279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
 		279153D91F622EC300E1A7C0 /* CustomModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
@@ -106,8 +112,9 @@
 				27D1659B1F5EF44800A57CF0 /* PostListViewController.swift */,
 				27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */,
 				27B371A51F61254C004BED17 /* ScrollViewController.swift */,
-				279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */,
 				2720391A1F6306720034E1CD /* CollectionViewController.swift */,
+				279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */,
+				272039201F6316760034E1CD /* PostSelfViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -126,6 +133,8 @@
 			children = (
 				27D1659F1F5EFC4F00A57CF0 /* LinkCell.swift */,
 				27B371A71F619793004BED17 /* AdvertisementCell.swift */,
+				2720391C1F630D590034E1CD /* SelfCell.swift */,
+				2720391E1F630DDF0034E1CD /* GenericListingCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -310,8 +319,11 @@
 				279153DA1F622EC300E1A7C0 /* CustomModalView.swift in Sources */,
 				27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
+				2720391F1F630DDF0034E1CD /* GenericListingCell.swift in Sources */,
 				27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */,
+				2720391D1F630D590034E1CD /* SelfCell.swift in Sources */,
 				279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */,
+				272039211F6316760034E1CD /* PostSelfViewController.swift in Sources */,
 				27D1659E1F5EF56F00A57CF0 /* RedditAPI.swift in Sources */,
 				27D165A01F5EFC4F00A57CF0 /* LinkCell.swift in Sources */,
 			);

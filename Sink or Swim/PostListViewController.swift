@@ -90,44 +90,73 @@ class PostListViewController: UITableViewController {
 			return generateAdvertisement(for: indexPath)
 		}
 		
-		// create link cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "linkCell", for: indexPath)
-		let lc = cell as! LinkCell
 		let row = indexPath.row
 		let post = self.posts[row]
 		
-		lc.titleLabel.text = post.title
-		lc.upperDetailLabel.text = "r/\(post.subreddit) · \(post.author)"
-		lc.lowerDetailLabel.text = "⬆️ \(post.score) ⬇️"
-		
-		// reset image due to reuse
-		lc.cellImageView.image = nil
-		
-		if let url = post.thumbnailURL {
-			loadThumbnail(forCell: cell, withURL: url)
-		} else {
-			lc.cellImageView.backgroundColor = .clear
+		// create either self or link cell
+		let cell: UITableViewCell = {
+			
+			// Self Posts
 			if post.isSelf {
-				lc.cellImageView.image = #imageLiteral(resourceName: "self-default-thumbnail")
+				return tableView.dequeueReusableCell(withIdentifier: "selfCell", for: indexPath)
+			}
+			
+			// Link Posts
+			let c = tableView.dequeueReusableCell(withIdentifier: "linkCell", for: indexPath)
+			// additionally, handle image cell
+			let lc = c as! LinkCell
+			lc.cellImageView.image = nil
+			
+			if let url = post.thumbnailURL {
+				loadThumbnail(forCell: c, withURL: url)
 			} else {
+				lc.cellImageView.backgroundColor = .clear
 				lc.cellImageView.image = #imageLiteral(resourceName: "link-default-thumbnail")
 			}
-		}
+			
+			return lc
+		}()
+		
+		// treat self and link cells the same, and set the labels they have
+		// in common
+		let genericCell = cell as! GenericListingCell
+		genericCell.titleLabel.text = post.title
+		genericCell.upperDetailLabel.text = "r/\(post.subreddit) · \(post.author)"
+		genericCell.lowerDetailLabel.text = "⬆️ \(post.score) ⬇️"
+		
         return cell
     }
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard indexPath.section == 1 else { return }
+		
 		self.selectedRow = indexPath.row
-		self.performSegue(withIdentifier: "redditLinkToBrowser", sender: self)
+		let post = posts[selectedRow!]
+		var segue = ""
+		
+		if post.isSelf {
+			segue = "redditLinkToSelfPost"
+		} else {
+			segue = "redditLinkToBrowser"
+		}
+		
+		self.performSegue(withIdentifier: segue, sender: self)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let post = posts[selectedRow!]
 		segue.destination.title = post.title
-		let webBrowser = segue.destination as! PostWebBrowserViewController
-		let req = URLRequest(url: post.url)
-		webBrowser.request = req
+		
+		// Link Post (Web Browser)
+		if let webBrowser = segue.destination as? PostWebBrowserViewController {
+			let req = URLRequest(url: post.url)
+			webBrowser.request = req
+		}
+		// Self Post (Text View)
+		else if let selfPostView = segue.destination as? PostSelfViewController {
+			selfPostView.postTitle = post.title
+			selfPostView.postBody = post.selfText
+		}
 	}
 	
 	func generateAdvertisement(for indexPath: IndexPath) -> UITableViewCell {
