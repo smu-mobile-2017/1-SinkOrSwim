@@ -17,7 +17,7 @@ class PostWebBrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		if let req = request {
-			webView.loadRequest(req)
+			DispatchQueue.main.async { webView.loadRequest(req) }
 		}
         // Do any additional setup after loading the view.
     }

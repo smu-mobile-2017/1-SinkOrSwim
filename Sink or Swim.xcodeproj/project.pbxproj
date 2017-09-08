@@ -17,6 +17,7 @@
 		2720391D1F630D590034E1CD /* SelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720391C1F630D590034E1CD /* SelfCell.swift */; };
 		2720391F1F630DDF0034E1CD /* GenericListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720391E1F630DDF0034E1CD /* GenericListingCell.swift */; };
 		272039211F6316760034E1CD /* PostSelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272039201F6316760034E1CD /* PostSelfViewController.swift */; };
+		272039231F6329F90034E1CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 272039221F6329F90034E1CD /* README.md */; };
 		279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */; };
 		279153D71F622E2F00E1A7C0 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */; };
 		279153DA1F622EC300E1A7C0 /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D91F622EC300E1A7C0 /* CustomModalView.swift */; };
@@ -44,6 +45,7 @@
 		2720391C1F630D590034E1CD /* SelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfCell.swift; sourceTree = "<group>"; };
 		2720391E1F630DDF0034E1CD /* GenericListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericListingCell.swift; sourceTree = "<group>"; };
 		272039201F6316760034E1CD /* PostSelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSelfViewController.swift; sourceTree = "<group>"; };
+		272039221F6329F90034E1CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWebBrowserViewController.swift; sourceTree = "<group>"; };
 		279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
 		279153D91F622EC300E1A7C0 /* CustomModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				27051AAB1F5EF2650072EBF6 /* Podfile */,
+				272039221F6329F90034E1CD /* README.md */,
 				27051A981F5EF25A0072EBF6 /* Sink or Swim */,
 				27051A971F5EF25A0072EBF6 /* Products */,
 				5C99637EB1624E48E9B78492 /* Pods */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272039231F6329F90034E1CD /* README.md in Resources */,
 				27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */,
 				27051AA11F5EF25A0072EBF6 /* Assets.xcassets in Resources */,
 				27051AAC1F5EF2650072EBF6 /* Podfile in Resources */,

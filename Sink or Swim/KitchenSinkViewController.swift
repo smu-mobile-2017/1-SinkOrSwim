@@ -32,9 +32,10 @@ class KitchenSinkViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		timerStringState = 0
-		self.navigationController?.navigationBar.tintColor = .white
-		pickerOutputLabel.numberOfLines = 0
-		pickerOutputLabel.lineBreakMode = .byWordWrapping
+		
+		DispatchQueue.main.async {
+			self.navigationController?.navigationBar.tintColor = .white
+		}
         // Do any additional setup after loading the view.
     }
 
@@ -46,7 +47,10 @@ class KitchenSinkViewController: UITableViewController {
 	@IBAction func didTouchTestButton(_ sender: Any) {
 		let alert = UIAlertController(title: "Thanks for pushing me", message: "No really, thanks", preferredStyle: .actionSheet)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-		self.present(alert, animated: true, completion: nil)
+		
+		DispatchQueue.main.async {
+			self.present(alert, animated: true, completion: nil)
+		}
 	}
 
 	@IBAction func didChangeSliderValue(_ sender: UISlider) {
@@ -62,24 +66,30 @@ class KitchenSinkViewController: UITableViewController {
 		default:
 			condition = "☀️ Sunny"
 		}
-		sliderOutputLabel.text = "\(condition) (\(Int(ceil(value)))%)"
+		DispatchQueue.main.async {
+			self.sliderOutputLabel.text = "\(condition) (\(Int(ceil(value)))%)"
+		}
 	}
 	
 	@IBAction func didChangeStepperValue(_ sender: UIStepper) {
 		let value = Int(sender.value)
-		stepperOutputLabel.text = "📶 Stepping to \(value)"
+		DispatchQueue.main.async {
+			self.stepperOutputLabel.text = "📶 Stepping to \(value)"
+		}
 	}
 	
 	@IBAction func didChangeSwitchValue(_ sender: UISwitch) {
-		let isOn = sender.isOn
-		if isOn {
-			switchOutputLabel.text = "Lights on"
-			switchOutputLabel.textColor = .black
-			switchContentView.backgroundColor = .clear
-		} else {
-			switchOutputLabel.text = "Lights off"
-			switchOutputLabel.textColor = .white
-			switchContentView.backgroundColor = .black
+		DispatchQueue.main.async {
+			let isOn = sender.isOn
+			if isOn {
+				self.switchOutputLabel.text = "Lights on"
+				self.switchOutputLabel.textColor = .black
+				self.switchContentView.backgroundColor = .clear
+			} else {
+				self.switchOutputLabel.text = "Lights off"
+				self.switchOutputLabel.textColor = .white
+				self.switchContentView.backgroundColor = .black
+			}
 		}
 	}
 	
