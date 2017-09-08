@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
 
-	let images: [UIImage] = [#imageLiteral(resourceName: "demo-flower"), #imageLiteral(resourceName: "demo-flower-2"), #imageLiteral(resourceName: "demo-flower-3"), #imageLiteral(resourceName: "demo-flower-4")]
+	lazy var images: [UIImage] = [#imageLiteral(resourceName: "demo-flower"), #imageLiteral(resourceName: "demo-flower-2"), #imageLiteral(resourceName: "demo-flower-3"), #imageLiteral(resourceName: "demo-flower-4")]
 	
     override func viewDidLoad() {
         super.viewDidLoad()

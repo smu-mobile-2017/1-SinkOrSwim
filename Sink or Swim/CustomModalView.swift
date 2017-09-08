@@ -8,11 +8,20 @@
 
 import UIKit
 
+protocol CustomModalViewDelegate: class {
+	func didTouchModalConfirmButton(sender: CustomModalView)
+}
+
 class CustomModalView: UIView {
 
 	@IBOutlet weak var modalMessage: UILabel!
+	weak var delegate: CustomModalViewDelegate?
 
 	@IBAction func didTouchConfirmButton(_ sender: UIButton) {
-		print("CONFIRM")
+		guard let delegate = delegate else {
+			print("Warning: CustomModalView has no delegate on didTouchConfirmButton")
+			return
+		}
+		delegate.didTouchModalConfirmButton(sender: self)
 	}
 }

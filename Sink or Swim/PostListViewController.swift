@@ -18,7 +18,7 @@ class PostListViewController: UITableViewController {
 	var selectedRow: Int? = nil
 	var posts: [RedditLink] = []
 	var advertisement: AdvertisementCell? = nil
-	let api: RedditAPI = RedditAPI()
+	lazy var api: RedditAPI = RedditAPI()
 	
 	func loadPosts(_ type: ListingType) {
 		firstly { () -> Promise<[RedditLink]> in
@@ -178,6 +178,17 @@ class PostListViewController: UITableViewController {
 	}
 	
 	func loadThumbnail(forCell cell: UITableViewCell, withURL url: URL) {
+		// Don't load images with URL "image", just load the placeholder
+		if url.absoluteString == "image" {
+			DispatchQueue.main.async {
+				let lc = cell as! LinkCell
+				lc.cellImageView.backgroundColor = .clear
+				lc.cellImageView.image = #imageLiteral(resourceName: "image-default-thumbnail")
+			}
+			return
+		}
+		
+		// Otherwise load the real thumb
 		RedditAPI.loadImage(url).then(on: .main) { image -> Void in
 			let lc = cell as! LinkCell
 			lc.cellImageView.image = image

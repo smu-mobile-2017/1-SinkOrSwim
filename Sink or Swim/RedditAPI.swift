@@ -23,7 +23,7 @@ class RedditAPI {
 	
 	typealias JSONDictionary = [String: Any]
 	static let rootURL: URL = URL(string: "https://reddit.com")!
-	var imageCache: NSCache<NSURL,UIImage> = NSCache()
+//	lazy var imageCache: NSCache<NSURL,UIImage> = NSCache()
 	
 	private static func baseRequest(to url: URL, withParameters parameters: [String: Any]) -> Promise<JSONDictionary> {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true

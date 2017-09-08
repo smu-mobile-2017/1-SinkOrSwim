@@ -8,15 +8,15 @@
 
 import UIKit
 
-class CustomModalViewController: UIViewController {
-
+class CustomModalViewController: UIViewController, CustomModalViewDelegate {
+	
+	var customModalView: CustomModalView {
+		return view as! CustomModalView
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		if (view as? CustomModalView) != nil {
-			print("VIEW WORKS")
-		} else {
-			print("NO")
-		}
+		customModalView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -24,8 +24,12 @@ class CustomModalViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+	
+	func didTouchModalConfirmButton(sender: CustomModalView) {
+		print("Delegating closing the VC for the Modal")
+		dismiss(animated: true, completion: nil)
+	}
+	
     /*
     // MARK: - Navigation
 

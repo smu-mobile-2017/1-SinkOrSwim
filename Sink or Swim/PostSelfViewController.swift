@@ -11,8 +11,8 @@ import UIKit
 class PostSelfViewController: UIViewController {
 
 	@IBOutlet weak var selfTextView: UITextView!
-	var postTitle: String = ""
-	var postBody: String = ""
+	lazy var postTitle: String = ""
+	lazy var postBody: String = ""
 	
     override func viewDidLoad() {
         super.viewDidLoad()
