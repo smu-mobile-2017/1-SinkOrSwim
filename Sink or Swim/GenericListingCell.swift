@@ -12,6 +12,12 @@ import UIKit
 // must declare as @objc to accept @IBOutlets as fulfilling
 // property requirements
 @objc protocol GenericListingCell: class {
+	
+	// This protocol generalizes LinkCell and SelfCell,
+	// as they both share the below labels (as IBOutlets)
+	// the only difference being that LinkCell also has
+	// an ImageView to display a thumbnail.
+	
 	var titleLabel: UILabel! { get }
 	var upperDetailLabel: UILabel! { get }
 	var lowerDetailLabel: UILabel! { get }

@@ -10,6 +10,19 @@ import UIKit
 
 class SelfCell: UITableViewCell, GenericListingCell {
 
+	// A self post *has* a URL, but it just links to the
+	// reddit page containing the text. It has a `self`
+	// property with that text. Instead, pressing on this
+	// cell, we just display a PostSelfViewController with
+	// the text.
+	//
+	// The self cell is laid out as follows:
+	//
+	// [upperDetailLabel] "SELF"
+	// [titleLabel]
+	// [lowerDetailLabel]
+	//
+	
 	@IBOutlet weak var upperDetailLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var lowerDetailLabel: UILabel!

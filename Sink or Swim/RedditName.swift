@@ -8,6 +8,9 @@
 
 import Foundation
 
+// The unique ID required by all Reddit "thing" entities. Consists of a
+// type ("kind") identifier, and an ID. The "fullname" is the type and ID,
+// joined by an underscore.
 struct RedditName {
 	var kind: String
 	var id: String

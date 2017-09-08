@@ -25,8 +25,8 @@ The project structure of the app is as follows:
 		- `CollectionViewController.swift`: the VC for the CollectionView demo, in "kitchen sink", displaying a static array of images.
 		- `PostWebBrowserViewController.swift`: the web browser triggered when clicking on LinkCells.
 		- `PostSelfViewController.swift`: the text view triggered when clicking on SelfCells.
-- **Custom Modal**: code for the graduate-level required custom modal and its delegate, separated off from the rest of the code.
-		- `CustomModalViewController.swift`: the VC for the graduate-level custom modal, implementing the custom delegate for said modal.
-		- `CustomModalView.swift`: the UIView subclass bound to a specific View in the storyboard through outlets, interfacing with an optional delegate property. The `CustomModalViewDelegate` is defined as a protocol in the same file.
+	- **Custom Modal**: code for the graduate-level required custom modal and its delegate, separated off from the rest of the code.
+			- `CustomModalViewController.swift`: the VC for the graduate-level custom modal, implementing the custom delegate for said modal.
+			- `CustomModalView.swift`: the UIView subclass bound to a specific View in the storyboard through outlets, interfacing with an optional delegate property. The `CustomModalViewDelegate` is defined as a protocol in the same file.
 	- `Assets.xcassets`
 	- `Info.plist`

@@ -10,6 +10,14 @@ import UIKit
 
 class AdvertisementCell: UITableViewCell {
 	
+	// The advertisement cell displays ad text that is
+	// asynchronously loaded from the ad server.
+	// Here it is mocked in the API class.
+	// The cell displays a spinner until text is provided
+	// when the promise resolves, and then hides the spinner
+	// and shows the ad text. The cell dynamically readjusts
+	// its height.
+	
 	@IBOutlet weak var advertisementMessage: UILabel!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
