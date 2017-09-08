@@ -18,11 +18,20 @@ class KitchenSinkViewController: UITableViewController {
 	
 	@IBOutlet weak var pickerOutputLabel: UILabel!
 	
+	@IBOutlet weak var timerOutputLabel: UILabel!
+	var timer: Timer?
+	var isTimerRunning: Bool = false
+	var timerStringState: Int? {
+		didSet {
+			updateTimerStringState(with: timerStringState)
+		}
+	}
 	
 	let pickerOptions = ["🍎Apples","🍌Bananas","🍒Cherries"]
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		timerStringState = 0
 		self.navigationController?.navigationBar.tintColor = .white
 		pickerOutputLabel.numberOfLines = 0
 		pickerOutputLabel.lineBreakMode = .byWordWrapping
@@ -74,15 +83,34 @@ class KitchenSinkViewController: UITableViewController {
 		}
 	}
 	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	func updateTimerStringState(with number: Int?) {
+		DispatchQueue.main.async {
+			if let number = number {
+				self.timerOutputLabel.text = String(number % 10) + " " + String(repeating: "🎈", count: number % 10)
+			} else {
+				self.timerOutputLabel.text = ""
+			}
+		}
+	}
+	
+	@IBAction func didPressTimerStartButton(_ sender: UIButton) {
+		guard !isTimerRunning else { return }
+		isTimerRunning = true
+		timer = .scheduledTimer(withTimeInterval: 1, repeats: true) { t in
+			if let tss = self.timerStringState {
+				self.timerStringState = tss + 1
+			} else {
+				self.timerStringState = 0
+			}
+		}
+	}
+	
+	@IBAction func didPressTimerResetButton(_ sender: UIButton) {
+		guard isTimerRunning, let timer = timer else { return }
+		timer.invalidate()
+		isTimerRunning = false
+		timerStringState = 0
+	}
 }
 
 extension KitchenSinkViewController: UIPickerViewDelegate {

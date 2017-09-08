@@ -230,7 +230,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbc-Kf-jGK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="tab-icon-home" id="Lmu-Xt-NTd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="B2N-WV-frU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B2N-WV-frU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -473,10 +473,67 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Timer" id="J5X-BF-3pw">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="88" id="JJ6-5B-Ml6">
+                                        <rect key="frame" x="0.0" y="511" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJ6-5B-Ml6" id="jHB-gm-Xwi">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-KK-l6y">
+                                                    <rect key="frame" x="8" y="49" width="35" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="1Hn-aO-MiY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <state key="normal" title="Start">
+                                                        <color key="titleColor" red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didPressTimerStartButton:" destination="dwR-s4-vp7" eventType="touchUpInside" id="NJ2-Uo-NmH"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEg-O9-bzz">
+                                                    <rect key="frame" x="272" y="49" width="40" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="BVI-mi-mjE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <state key="normal" title="Reset">
+                                                        <color key="titleColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didPressTimerResetButton:" destination="dwR-s4-vp7" eventType="touchUpInside" id="esu-hn-3My"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wa-xx-JOV">
+                                                    <rect key="frame" x="8" y="8" width="304" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="4Wa-xx-JOV" firstAttribute="trailing" secondItem="jHB-gm-Xwi" secondAttribute="trailingMargin" id="0xG-ER-sjb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4Si-KK-l6y" secondAttribute="bottom" id="Q4g-eA-m6C"/>
+                                                <constraint firstItem="nEg-O9-bzz" firstAttribute="top" secondItem="4Wa-xx-JOV" secondAttribute="bottom" constant="1" id="UgF-HM-etY"/>
+                                                <constraint firstItem="4Wa-xx-JOV" firstAttribute="top" secondItem="jHB-gm-Xwi" secondAttribute="topMargin" id="Y6x-M4-DFp"/>
+                                                <constraint firstItem="nEg-O9-bzz" firstAttribute="trailing" secondItem="jHB-gm-Xwi" secondAttribute="trailingMargin" id="hCU-2Q-Q10"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nEg-O9-bzz" secondAttribute="bottom" id="uhq-PF-I86"/>
+                                                <constraint firstItem="4Si-KK-l6y" firstAttribute="leading" secondItem="jHB-gm-Xwi" secondAttribute="leadingMargin" id="vH5-Fc-CMq"/>
+                                                <constraint firstItem="4Wa-xx-JOV" firstAttribute="leading" secondItem="jHB-gm-Xwi" secondAttribute="leadingMargin" id="yzG-pp-HLz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Picker" id="fXk-6s-bkD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Huh-c8-epc" style="IBUITableViewCellStyleDefault" id="sqC-eS-AxZ">
-                                        <rect key="frame" x="0.0" y="511" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="655" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sqC-eS-AxZ" id="Yfy-xW-ITR">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -493,7 +550,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="216" id="iPX-Fl-Sb3">
-                                        <rect key="frame" x="0.0" y="555" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="699" width="320" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iPX-Fl-Sb3" id="aI3-id-AoW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="215.5"/>
@@ -532,11 +589,12 @@
                         <outlet property="stepperOutputLabel" destination="aMl-T5-dUB" id="mJh-iv-m2a"/>
                         <outlet property="switchContentView" destination="prP-wE-bw3" id="Vh1-vt-1Rp"/>
                         <outlet property="switchOutputLabel" destination="VuJ-i8-m21" id="KVk-1C-626"/>
+                        <outlet property="timerOutputLabel" destination="4Wa-xx-JOV" id="m4j-Ml-lGE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZk-PC-dlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017.5" y="1083.8028169014085"/>
+            <point key="canvasLocation" x="2016" y="1083.0584707646178"/>
         </scene>
         <!--Custom Modal View Controller-->
         <scene sceneID="vZX-IV-KxW">
