@@ -121,7 +121,11 @@ class RedditAPI {
 		// mock advertisement server
 		return after(seconds: 1).then {
 			return Promise { fulfill, reject in
-				let ads = ["Ad A","Ad B","Ad C"]
+				let ads = [
+					"🍎 Alan's Apples are Always Amazing!",
+					"🍌 Buy Bob's Bananas: Bargain Bonanza!",
+					"🍒 Chen's Cherries Chime-in Cheer!"
+				]
 				let randomChoice = Int(arc4random_uniform(UInt32(ads.count)))
 				fulfill(ads[randomChoice])
 			}

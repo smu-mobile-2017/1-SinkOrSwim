@@ -24,6 +24,8 @@ class KitchenSinkViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationController?.navigationBar.tintColor = .white
+		pickerOutputLabel.numberOfLines = 0
+		pickerOutputLabel.lineBreakMode = .byWordWrapping
         // Do any additional setup after loading the view.
     }
 

@@ -15,6 +15,7 @@ enum ListingType {
 
 class PostListViewController: UITableViewController {
 	
+	var selectedRow: Int? = nil
 	var posts: [RedditLink] = []
 	var advertisement: AdvertisementCell? = nil
 	let api: RedditAPI = RedditAPI()
@@ -115,14 +116,28 @@ class PostListViewController: UITableViewController {
         return cell
     }
 	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard indexPath.section == 1 else { return }
+		self.selectedRow = indexPath.row
+		self.performSegue(withIdentifier: "redditLinkToBrowser", sender: self)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let post = posts[selectedRow!]
+		segue.destination.title = post.title
+	}
+	
 	func generateAdvertisement(for indexPath: IndexPath) -> UITableViewCell {
 		if let ad = self.advertisement {
 			return ad
 		}
 		let cell = tableView.dequeueReusableCell(withIdentifier: "advertisementCell", for: indexPath)
 		let ad = cell as! AdvertisementCell
-		RedditAPI.getAdvertisementMessage().then { msg in
+		ad.updateLoadedState(message: nil)
+		RedditAPI.getAdvertisementMessage().then { msg -> Void in
 			ad.updateLoadedState(message: msg)
+		}.then{
+			self.tableView.reloadRows(at: [indexPath], with: .none)
 		}.catch { error in
 			print("[generateAdvertisement] Error: \(error)")
 		}
@@ -131,9 +146,7 @@ class PostListViewController: UITableViewController {
 	}
 	
 	func loadThumbnail(forCell cell: UITableViewCell, withURL url: URL) {
-		let q = DispatchQueue.main
-		print(url)
-		RedditAPI.loadImage(url).then(on: q) { image -> Void in
+		RedditAPI.loadImage(url).then(on: .main) { image -> Void in
 			let lc = cell as! LinkCell
 			lc.cellImageView.image = image
 		}.catch { error in
