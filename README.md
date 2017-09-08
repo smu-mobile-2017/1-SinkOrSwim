@@ -1,0 +1,32 @@
+# Sink or Swim
+The project structure of the app is as follows:
+
+- `Podfile`: Cocoapods dependencies.
+- `README.md`: this file.
+- **Sink or Swim**
+	- `AppDelegate.swift`: the starting point of the application.
+	- **Storyboards**
+		- `Main.storyboard`: The entirety of the UI
+		- `LaunchScreen.storyboard`: Unused for this project.
+	- **Cells**: all UITableViewCell subclasses and related material.
+		- `LinkCell.swift`: the cell for Reddit Link posts
+		- `AdvertisementCell.swift`: the cell for (fake) advertisements.
+		- `SelfCell.swift`:	the cell for Reddit Self (text-based) posts.
+		- `GenericListingCell.swift`: a protocol for LinkCell and SelfCell, that represents their shared label outlets.
+	- **Reddit**: contains code for Reddit API and relevant data models.
+		- `RedditAPI.swift`: the main class with network code for the Reddit API and factories for conversion to data models.
+		- `RedditLink.swift`: a struct representing a reddit post ("link" in Reddit lingo)
+		- `RedditThing.swift`: a protocol generalizing "things" (reddit mixes all content together into a heap known as things)
+		- `RedditName.swift`: a struct representing the reddit unique ID system ("names" for "things") which consists of a type identifier joined with an ID.
+	- **View Controllers**
+		- `PostListViewController.swift`: the VC for the "home" tab, which displays a table of reddit posts.
+		- `KitchenSinkViewController.swift`: the VC for the "kitchen sink" tab, which contains a complex variety of UIKit elements for demonstrative purposes, and some links to subpages for Scroll, Collection, and Modal views.
+		- `ScrollViewController.swift`: the VC for the ScrollView demo, underneath the "kitchen sink" tab, displaying a static image.
+		- `CollectionViewController.swift`: the VC for the CollectionView demo, in "kitchen sink", displaying a static array of images.
+		- `PostWebBrowserViewController.swift`: the web browser triggered when clicking on LinkCells.
+		- `PostSelfViewController.swift`: the text view triggered when clicking on SelfCells.
+- **Custom Modal**: code for the graduate-level required custom modal and its delegate, separated off from the rest of the code.
+		- `CustomModalViewController.swift`: the VC for the graduate-level custom modal, implementing the custom delegate for said modal.
+		- `CustomModalView.swift`: the UIView subclass bound to a specific View in the storyboard through outlets, interfacing with an optional delegate property. The `CustomModalViewDelegate` is defined as a protocol in the same file.
+	- `Assets.xcassets`
+	- `Info.plist`
