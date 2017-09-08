@@ -203,7 +203,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbZ-YT-ouK">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbZ-YT-ouK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -289,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="1080" y="923.23943661971828"/>
         </scene>
-        <!--Kitchen Sink View Controller-->
+        <!--Kitchen Sink-->
         <scene sceneID="Ix0-vz-ozu">
             <objects>
                 <tableViewController id="dwR-s4-vp7" customClass="KitchenSinkViewController" customModule="Sink_or_Swim" customModuleProvider="target" sceneMemberID="viewController">
@@ -523,7 +523,7 @@
                             <outlet property="delegate" destination="dwR-s4-vp7" id="A9l-Q1-XhH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Dzj-26-kZh"/>
+                    <navigationItem key="navigationItem" title="Kitchen Sink" id="Dzj-26-kZh"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
@@ -538,41 +538,72 @@
             </objects>
             <point key="canvasLocation" x="2017.5" y="1083.8028169014085"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Modal View Controller-->
         <scene sceneID="vZX-IV-KxW">
             <objects>
-                <viewController id="JLY-cD-eL8" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="JLY-cD-eL8" customClass="CustomModalViewController" customModule="Sink_or_Swim" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1N-Zs-tOi"/>
                         <viewControllerLayoutGuide type="bottom" id="mhv-SM-agJ"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="FQT-Fm-0Ty">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="FQT-Fm-0Ty" customClass="CustomModalView" customModule="Sink_or_Swim" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQe-3b-Y82">
-                                <rect key="frame" x="163" y="323" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmH-cU-N0H">
-                                <rect key="frame" x="168" y="398" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTO-uB-igZ">
+                                <rect key="frame" x="10" y="230" width="355" height="207"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMu-kj-Ur2">
+                                        <rect key="frame" x="15" y="15" width="325" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal message goes here." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-yo-1OD">
+                                        <rect key="frame" x="15" y="51.5" width="325" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-yI-SfB">
+                                        <rect key="frame" x="249" y="159" width="91" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Cool beans"/>
+                                        <connections>
+                                            <action selector="didTouchConfirmButton:" destination="FQT-Fm-0Ty" eventType="touchUpInside" id="sQD-3L-YiY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IXT-yo-1OD" firstAttribute="top" secondItem="DMu-kj-Ur2" secondAttribute="bottom" constant="5" id="6Yv-Du-faU"/>
+                                    <constraint firstItem="DMu-kj-Ur2" firstAttribute="top" secondItem="eTO-uB-igZ" secondAttribute="top" constant="15" id="FNr-TE-x9L"/>
+                                    <constraint firstAttribute="bottom" secondItem="fUc-yI-SfB" secondAttribute="bottom" constant="15" id="JT8-sx-ZQx"/>
+                                    <constraint firstAttribute="trailing" secondItem="IXT-yo-1OD" secondAttribute="trailing" constant="15" id="L0g-VR-Irk"/>
+                                    <constraint firstAttribute="trailing" secondItem="DMu-kj-Ur2" secondAttribute="trailing" constant="15" id="NQC-uS-gpj"/>
+                                    <constraint firstItem="fUc-yI-SfB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IXT-yo-1OD" secondAttribute="bottom" constant="15" id="Okh-5l-e8T"/>
+                                    <constraint firstItem="IXT-yo-1OD" firstAttribute="leading" secondItem="eTO-uB-igZ" secondAttribute="leading" constant="15" id="ebk-sX-DV6"/>
+                                    <constraint firstAttribute="width" secondItem="eTO-uB-igZ" secondAttribute="height" multiplier="355:207" id="rgO-xr-sWc"/>
+                                    <constraint firstAttribute="trailing" secondItem="fUc-yI-SfB" secondAttribute="trailing" constant="15" id="tOm-Sy-r4R"/>
+                                    <constraint firstItem="DMu-kj-Ur2" firstAttribute="leading" secondItem="eTO-uB-igZ" secondAttribute="leading" constant="15" id="ydL-Rm-H1S"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.3985445205479452" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RmH-cU-N0H" firstAttribute="top" secondItem="lQe-3b-Y82" secondAttribute="bottom" constant="54" id="7Al-4V-YT1"/>
-                            <constraint firstItem="lQe-3b-Y82" firstAttribute="centerY" secondItem="FQT-Fm-0Ty" secondAttribute="centerY" id="7aR-gY-hgT"/>
-                            <constraint firstItem="lQe-3b-Y82" firstAttribute="centerX" secondItem="FQT-Fm-0Ty" secondAttribute="centerX" id="KT4-jA-nKe"/>
-                            <constraint firstItem="RmH-cU-N0H" firstAttribute="centerX" secondItem="FQT-Fm-0Ty" secondAttribute="centerX" id="VC1-zq-OGL"/>
+                            <constraint firstAttribute="trailing" secondItem="eTO-uB-igZ" secondAttribute="trailing" constant="10" id="1NB-JC-uVs"/>
+                            <constraint firstItem="eTO-uB-igZ" firstAttribute="leading" secondItem="FQT-Fm-0Ty" secondAttribute="leading" constant="10" id="7go-26-hEg"/>
+                            <constraint firstItem="eTO-uB-igZ" firstAttribute="centerY" secondItem="FQT-Fm-0Ty" secondAttribute="centerY" id="iCY-7R-47U"/>
                         </constraints>
+                        <connections>
+                            <outlet property="modalMessage" destination="IXT-yo-1OD" id="5ci-i9-EsS"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rS-6N-8kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="1968"/>
+            <point key="canvasLocation" x="2016.8" y="1967.7661169415294"/>
         </scene>
         <!--UIScrollView Demo-->
         <scene sceneID="x0V-Qk-OsD">

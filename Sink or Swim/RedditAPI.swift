@@ -107,7 +107,7 @@ class RedditAPI {
 		
 		return Promise { fulfill, reject in
 			let task = URLSession.shared.dataTask(with: url) { data, response, error in
-				if let image = UIImage(data: data!) {
+				if let data = data, let image = UIImage(data: data) {
 					fulfill(image)
 				} else {
 					reject(RedditAPIError.imageLoadFailed)

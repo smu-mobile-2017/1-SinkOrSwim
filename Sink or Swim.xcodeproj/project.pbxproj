@@ -14,6 +14,8 @@
 		27051AA41F5EF25A0072EBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27051AA21F5EF25A0072EBF6 /* LaunchScreen.storyboard */; };
 		27051AAC1F5EF2650072EBF6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 27051AAB1F5EF2650072EBF6 /* Podfile */; };
 		279153D51F6223FB00E1A7C0 /* PostWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */; };
+		279153D71F622E2F00E1A7C0 /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */; };
+		279153DA1F622EC300E1A7C0 /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279153D91F622EC300E1A7C0 /* CustomModalView.swift */; };
 		27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */; };
 		27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A51F61254C004BED17 /* ScrollViewController.swift */; };
 		27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B371A71F619793004BED17 /* AdvertisementCell.swift */; };
@@ -35,6 +37,8 @@
 		27051AA51F5EF25A0072EBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27051AAB1F5EF2650072EBF6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWebBrowserViewController.swift; sourceTree = "<group>"; };
+		279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
+		279153D91F622EC300E1A7C0 /* CustomModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		27B371A31F610EF0004BED17 /* KitchenSinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewController.swift; sourceTree = "<group>"; };
 		27B371A51F61254C004BED17 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		27B371A71F619793004BED17 /* AdvertisementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				27B371A91F619878004BED17 /* Cells */,
 				27D165A51F5F054400A57CF0 /* Reddit */,
 				279153B31F61CE6000E1A7C0 /* View Controllers */,
+				279153D81F622E5200E1A7C0 /* Custom Modal */,
 				27051AA01F5EF25A0072EBF6 /* Assets.xcassets */,
 				27051AA51F5EF25A0072EBF6 /* Info.plist */,
 			);
@@ -102,6 +107,15 @@
 				279153D41F6223FB00E1A7C0 /* PostWebBrowserViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		279153D81F622E5200E1A7C0 /* Custom Modal */ = {
+			isa = PBXGroup;
+			children = (
+				279153D61F622E2F00E1A7C0 /* CustomModalViewController.swift */,
+				279153D91F622EC300E1A7C0 /* CustomModalView.swift */,
+			);
+			name = "Custom Modal";
 			sourceTree = "<group>";
 		};
 		27B371A91F619878004BED17 /* Cells */ = {
@@ -288,6 +302,8 @@
 				27D165AD1F5F06D600A57CF0 /* RedditName.swift in Sources */,
 				27D165A91F5F062300A57CF0 /* RedditLink.swift in Sources */,
 				27B371A61F61254C004BED17 /* ScrollViewController.swift in Sources */,
+				279153D71F622E2F00E1A7C0 /* CustomModalViewController.swift in Sources */,
+				279153DA1F622EC300E1A7C0 /* CustomModalView.swift in Sources */,
 				27B371A41F610EF0004BED17 /* KitchenSinkViewController.swift in Sources */,
 				27051A9A1F5EF25A0072EBF6 /* AppDelegate.swift in Sources */,
 				27B371A81F619793004BED17 /* AdvertisementCell.swift in Sources */,
